@@ -8,13 +8,13 @@ const MAX_JUMPS = 2
 
 var gravity : float = 500.0
 var sprite : AnimatedSprite2D
-var jump_effect: AnimatedSprite2D
 var score : int = 0
 var jumps : int = 0
 var animation_lock : bool = false
 var die: bool = false
 var lock: bool = false
 var level: int = 1
+var jump_effect: AnimatedSprite2D = null
 
 const ANIM_LEVEL_1 = {
 	"idle": "idle",
@@ -42,6 +42,8 @@ const ANIMATIONS = {
 @onready var score_coin_text: Label = get_node("CanvasLayer/ScoreCoin")
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var color_rect: ColorRect = $Colors
+
+## SFX
 @onready var sfx_pickup_coin: AudioStreamPlayer2D = get_node("SFX/PickupCoinSfx")
 @onready var sfx_power_up: AudioStreamPlayer2D = get_node("SFX/PowerUpSfx")
 @onready var sfx_jump: AudioStreamPlayer2D = get_node("SFX/JumpSfx")
@@ -49,9 +51,8 @@ const ANIMATIONS = {
 
 func _ready():
 	sprite = $AnimatedSprite2D
-	jump_effect = $JumpEffect
-	jump_effect.visible = false
 	sprite.flip_h = defaultDirection
+	jump_effect = owner.get_node("JumpEffect")
 
 func _physics_process(delta):
 	velocity.x = 0
@@ -88,6 +89,7 @@ func check_inputs(delta: float):
 			change_animation("double_jump")
 			animation_lock = true
 			sfx_double_jump.play()
+			play_double_jump_effect()
 		else:
 			jumps -= 1
 			sfx_jump.play()
@@ -138,6 +140,13 @@ func get_animation(anim_key: String) -> String:
 
 func play_coin_sfx():
 	sfx_pickup_coin.play()
+	
+func play_double_jump_effect():
+	if (jump_effect == null):
+		return
+
+	jump_effect.global_position = global_position
+	jump_effect.play("effect")
 
 func _on_animated_sprite_2d_animation_finished():
 	if sprite.animation == "double_jump":

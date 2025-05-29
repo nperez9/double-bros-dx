@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxlth40b6j2i2"]
+
+[ext_resource type="Texture2D" uid="uid://chnafx7wctlr6" path="res://Sprites/Plumbers/Particles-and-Icons.png" id="1_id63k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv03w"]
+atlas = ExtResource("1_id63k")
+region = Rect2(1, 1, 17, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wubgt"]
+atlas = ExtResource("1_id63k")
+region = Rect2(1, 17, 17, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4iul"]
+atlas = ExtResource("1_id63k")
+region = Rect2(1, 33, 17, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_udnx4"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kv03w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wubgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4iul")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"effect",
+"speed": 12.0
+}]
+
+[node name="JumpEffect" type="AnimatedSprite2D"]
+position = Vector2(-3, 10)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_udnx4")
+autoplay = "default"

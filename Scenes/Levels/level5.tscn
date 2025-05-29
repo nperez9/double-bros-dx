@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bib2k65xsckr0"]
 
-[ext_resource type="PackedScene" uid="uid://qc4k7fafw0tx" path="res://scenes/player/plumber-player.tscn" id="1_2jb8x"]
+[ext_resource type="PackedScene" uid="uid://qc4k7fafw0tx" path="res://Scenes/Player/plumber-player.tscn" id="1_2jb8x"]
 
 [node name="Level5" type="Node2D"]
 

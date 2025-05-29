@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cercux8y1o8lw"]
+[gd_scene load_steps=10 format=3 uid="uid://cercux8y1o8lw"]
 
-[ext_resource type="Texture2D" uid="uid://cyoqpaayjk7xe" path="res://Sprites/Tilemap/tilemap_packed.png" id="1_qdhvc"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_j5h2c"]
+[ext_resource type="Texture2D" uid="uid://cyoqpaayjk7xe" path="res://Sprites/tilemaps/tilemap_packed.png" id="1_qdhvc"]
 [ext_resource type="PackedScene" uid="uid://dfj1f71kwy1pk" path="res://Scenes/Enemies/enemy.tscn" id="2_vnrl7"]
 [ext_resource type="PackedScene" uid="uid://b0mt0pl45xg2f" path="res://Scenes/Enemies/spikes.tscn" id="5_30va3"]
-[ext_resource type="PackedScene" uid="uid://bi573tetj2n1a" path="res://Scenes/coin.tscn" id="6_lv21x"]
+[ext_resource type="PackedScene" uid="uid://bi573tetj2n1a" path="res://Scenes/Interactuable/coin.tscn" id="6_lv21x"]
 [ext_resource type="PackedScene" uid="uid://bqwkdx4u8q68m" path="res://Scenes/Interactuable/end_flag.tscn" id="6_nug8f"]
 [ext_resource type="PackedScene" uid="uid://qc4k7fafw0tx" path="res://Scenes/Player/plumber-player.tscn" id="6_subc5"]
 
@@ -410,6 +411,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_pem38")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_j5h2c")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ftv8j")
