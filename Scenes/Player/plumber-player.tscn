@@ -1,11 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://qc4k7fafw0tx"]
+[gd_scene load_steps=20 format=3 uid="uid://qc4k7fafw0tx"]
 
 [ext_resource type="Script" path="res://scenes/player/plumber-player.gd" id="1_blwad"]
-[ext_resource type="SpriteFrames" uid="uid://bhrcgnejaoq14" path="res://scenes/Player/plumber-player.tres" id="2_tkoci"]
-[ext_resource type="AudioStream" uid="uid://dj61ivtwhvq0c" path="res://audio/SFX/pick_coin.sfxr" id="3_1ekd0"]
+[ext_resource type="AudioStream" uid="uid://cddp74dgni42g" path="res://Audio/SFX/jump.sfxr" id="2_bhdql"]
+[ext_resource type="SpriteFrames" path="res://scenes/Player/plumber-player.tres" id="2_tkoci"]
+[ext_resource type="AudioStream" uid="uid://dj61ivtwhvq0c" path="res://Audio/SFX/pick_coin.sfxr" id="3_1ekd0"]
 [ext_resource type="Texture2D" uid="uid://chnafx7wctlr6" path="res://Sprites/Plumbers/Particles-and-Icons.png" id="3_om6cy"]
 [ext_resource type="Texture2D" uid="uid://ydbe1tyhvygu" path="res://Sprites/Objects/tile_0151.png" id="4_wbuhd"]
-[ext_resource type="AudioStream" uid="uid://blillu24suudl" path="res://audio/SFX/power_up.sfxr" id="5_q40mt"]
+[ext_resource type="AudioStream" uid="uid://bbbaipv2hkl2l" path="res://Audio/SFX/double_jump.sfxr" id="5_bx67g"]
+[ext_resource type="AudioStream" uid="uid://blillu24suudl" path="res://Audio/SFX/power_up.sfxr" id="5_q40mt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8gw7"]
 radius = 4.0
@@ -16,36 +18,33 @@ font_size = 24
 outline_size = 4
 outline_color = Color(0.0705882, 0.0705882, 0.0705882, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kv03w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4iul"]
 atlas = ExtResource("3_om6cy")
-region = Rect2(1, 1, 17, 15)
+region = Rect2(1, 33, 17, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wubgt"]
 atlas = ExtResource("3_om6cy")
 region = Rect2(1, 17, 17, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y4iul"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv03w"]
 atlas = ExtResource("3_om6cy")
-region = Rect2(1, 33, 17, 15)
+region = Rect2(1, 1, 17, 15)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_udnx4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kv03w")
+"texture": SubResource("AtlasTexture_y4iul")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wubgt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y4iul")
-}, {
-"duration": 1.0,
-"texture": null
+"texture": SubResource("AtlasTexture_kv03w")
 }],
 "loop": false,
 "name": &"default",
-"speed": 14.0
+"speed": 9.0
 }]
 
 [sub_resource type="Animation" id="Animation_0ti6k"]
@@ -158,11 +157,24 @@ defaultDirection = false
 
 [node name="SFX" type="Node" parent="."]
 
+[node name="JumpSfx" type="AudioStreamPlayer2D" parent="SFX"]
+position = Vector2(-2, 0)
+stream = ExtResource("2_bhdql")
+bus = &"SFX"
+
 [node name="PowerUpSfx" type="AudioStreamPlayer2D" parent="SFX"]
+position = Vector2(-1, 0)
 stream = ExtResource("5_q40mt")
+bus = &"SFX"
 
 [node name="PickupCoinSfx" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("3_1ekd0")
+bus = &"SFX"
+
+[node name="DoubleJumpSfx" type="AudioStreamPlayer2D" parent="SFX"]
+position = Vector2(-2, 0)
+stream = ExtResource("5_bx67g")
+bus = &"SFX"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(96, -34)

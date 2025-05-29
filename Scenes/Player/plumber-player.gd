@@ -44,6 +44,8 @@ const ANIMATIONS = {
 @onready var color_rect: ColorRect = $Colors
 @onready var sfx_pickup_coin: AudioStreamPlayer2D = get_node("SFX/PickupCoinSfx")
 @onready var sfx_power_up: AudioStreamPlayer2D = get_node("SFX/PowerUpSfx")
+@onready var sfx_jump: AudioStreamPlayer2D = get_node("SFX/JumpSfx")
+@onready var sfx_double_jump: AudioStreamPlayer2D = get_node("SFX/DoubleJumpSfx")
 
 func _ready():
 	sprite = $AnimatedSprite2D
@@ -58,7 +60,12 @@ func _physics_process(delta):
 	if die: 
 		return
 
-	## Ground Movement/animation manager
+	check_inputs(delta)
+	move_and_slide()
+	check_lose_condition()
+
+func check_inputs(delta: float):
+	## Moving
 	if Input.is_action_pressed("mode_left"):
 		velocity.x -= move_speed
 		flip_sprite(!defaultDirection)
@@ -80,15 +87,14 @@ func _physics_process(delta):
 			jumps -= 2
 			change_animation("double_jump")
 			animation_lock = true
+			sfx_double_jump.play()
 		else:
 			jumps -= 1
-	
+			sfx_jump.play()
+		
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		change_animation("jump")
-		
-	move_and_slide()
-	check_lose_condition()
 
 func flip_sprite(direction: bool):
 	sprite.flip_h = direction

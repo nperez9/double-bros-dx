@@ -3,12 +3,12 @@
 importer="com.timothyqiu.gdfxr.importer"
 type="AudioStreamWAV"
 uid="uid://blillu24suudl"
-path="res://.godot/imported/power_up.sfxr-877261e1270d4924f281d99315c7697a.sample"
+path="res://.godot/imported/power_up.sfxr-a882d5b135f16277463085ea6de5078e.sample"
 
 [deps]
 
-source_file="res://audio/SFX/power_up.sfxr"
-dest_files=["res://.godot/imported/power_up.sfxr-877261e1270d4924f281d99315c7697a.sample"]
+source_file="res://Audio/SFX/power_up.sfxr"
+dest_files=["res://.godot/imported/power_up.sfxr-a882d5b135f16277463085ea6de5078e.sample"]
 
 [params]
 

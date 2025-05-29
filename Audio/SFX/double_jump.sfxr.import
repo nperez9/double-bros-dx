@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://bbbaipv2hkl2l"
+path="res://.godot/imported/double_jump.sfxr-90ede78a474bab4f112bd73373c8e75d.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/double_jump.sfxr"
+dest_files=["res://.godot/imported/double_jump.sfxr-90ede78a474bab4f112bd73373c8e75d.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0
