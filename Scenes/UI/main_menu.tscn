@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c81b3y4civlxv"]
+[gd_scene load_steps=9 format=3 uid="uid://c81b3y4civlxv"]
 
 [ext_resource type="Texture2D" uid="uid://bt0l6egi43dwm" path="res://metadata/cover.jpg" id="1_e0chc"]
 [ext_resource type="Script" path="res://scenes/UI/scripts/main_menu.gd" id="1_netay"]
@@ -6,7 +6,16 @@
 [sub_resource type="LabelSettings" id="LabelSettings_d2mqe"]
 font_size = 45
 
+[sub_resource type="FontFile" id="FontFile_mqehw"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
 [sub_resource type="LabelSettings" id="LabelSettings_so534"]
+font = SubResource("FontFile_mqehw")
 
 [sub_resource type="Animation" id="Animation_62gjf"]
 length = 0.001

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://qc4k7fafw0tx"]
+[gd_scene load_steps=15 format=3 uid="uid://qc4k7fafw0tx"]
 
 [ext_resource type="Script" path="res://scenes/player/plumber-player.gd" id="1_blwad"]
 [ext_resource type="AudioStream" uid="uid://cddp74dgni42g" path="res://Audio/SFX/jump.sfxr" id="2_bhdql"]
@@ -7,11 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://ydbe1tyhvygu" path="res://Sprites/Objects/tile_0151.png" id="4_wbuhd"]
 [ext_resource type="AudioStream" uid="uid://bbbaipv2hkl2l" path="res://Audio/SFX/double_jump.sfxr" id="5_bx67g"]
 [ext_resource type="AudioStream" uid="uid://blillu24suudl" path="res://Audio/SFX/power_up.sfxr" id="5_q40mt"]
-[ext_resource type="PackedScene" uid="uid://dxlth40b6j2i2" path="res://Scenes/Player/jump_effect.tscn" id="8_itfkp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8gw7"]
 radius = 4.0
-height = 16.0
+height = 14.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ahhvf"]
 font_size = 24
@@ -157,7 +156,7 @@ position_smoothing_speed = 10.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
 sprite_frames = ExtResource("2_tkoci")
-animation = &"win"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
@@ -185,9 +184,6 @@ label_settings = SubResource("LabelSettings_ahhvf")
 position = Vector2(69, 35.928)
 scale = Vector2(2, 1.992)
 texture = ExtResource("4_wbuhd")
-
-[node name="JumpEffect" parent="." instance=ExtResource("8_itfkp")]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
