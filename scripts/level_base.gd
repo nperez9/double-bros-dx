@@ -7,7 +7,7 @@ class_name LevelBase
 var level_color_rect = ColorRect
 var jump_effect = preload("res://Scenes/Player/jump_effect.tscn")
 
-@onready var level_audio_stream: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
+@onready var level_audio_stream: AudioStream = AudioStream.new()
 
 func _init():
 	create_level_nodes()

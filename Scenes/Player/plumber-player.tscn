@@ -128,21 +128,22 @@ defaultDirection = false
 [node name="SFX" type="Node" parent="."]
 
 [node name="JumpSfx" type="AudioStreamPlayer2D" parent="SFX"]
-position = Vector2(-2, 0)
+position = Vector2(0, 7)
 stream = ExtResource("2_bhdql")
 bus = &"SFX"
 
 [node name="PowerUpSfx" type="AudioStreamPlayer2D" parent="SFX"]
-position = Vector2(-1, 0)
+position = Vector2(0, -8)
 stream = ExtResource("5_q40mt")
 bus = &"SFX"
 
 [node name="PickupCoinSfx" type="AudioStreamPlayer2D" parent="SFX"]
+position = Vector2(1, 0)
 stream = ExtResource("3_1ekd0")
 bus = &"SFX"
 
 [node name="DoubleJumpSfx" type="AudioStreamPlayer2D" parent="SFX"]
-position = Vector2(-2, 0)
+position = Vector2(0, 6)
 stream = ExtResource("5_bx67g")
 bus = &"SFX"
 

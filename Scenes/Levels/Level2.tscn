@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjignrnokc4kb"]
+[gd_scene load_steps=9 format=3 uid="uid://cjignrnokc4kb"]
 
 [ext_resource type="PackedScene" uid="uid://dmyeq1yxa6yh1" path="res://Scenes/Interactuable/tile_map_industry.tscn" id="1_18m3e"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_y0go0"]
+[ext_resource type="AudioStream" uid="uid://1e4o5hhrq26s" path="res://Audio/Music/rusty-bucket.mp3" id="2_341cm"]
 [ext_resource type="PackedScene" uid="uid://b0mt0pl45xg2f" path="res://Scenes/Enemies/spikes.tscn" id="3_wo6h7"]
 [ext_resource type="PackedScene" uid="uid://dfj1f71kwy1pk" path="res://Scenes/Enemies/enemy.tscn" id="4_nd2xe"]
 [ext_resource type="PackedScene" uid="uid://bqwkdx4u8q68m" path="res://Scenes/Interactuable/end_flag.tscn" id="5_aoku7"]
@@ -10,6 +11,7 @@
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_y0go0")
+levelMusic = ExtResource("2_341cm")
 metadata/_edit_horizontal_guides_ = [-67.0]
 
 [node name="TileMap" parent="." instance=ExtResource("1_18m3e")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bib2k65xsckr0"]
+[gd_scene load_steps=2 format=3 uid="uid://c8w1j2buuggvn"]
 
 [ext_resource type="PackedScene" uid="uid://qc4k7fafw0tx" path="res://Scenes/Player/plumber-player.tscn" id="1_2jb8x"]
 
