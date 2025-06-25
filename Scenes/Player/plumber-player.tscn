@@ -125,28 +125,6 @@ _data = {
 script = ExtResource("1_blwad")
 defaultDirection = false
 
-[node name="SFX" type="Node" parent="."]
-
-[node name="JumpSfx" type="AudioStreamPlayer2D" parent="SFX"]
-position = Vector2(0, 7)
-stream = ExtResource("2_bhdql")
-bus = &"SFX"
-
-[node name="PowerUpSfx" type="AudioStreamPlayer2D" parent="SFX"]
-position = Vector2(0, -8)
-stream = ExtResource("5_q40mt")
-bus = &"SFX"
-
-[node name="PickupCoinSfx" type="AudioStreamPlayer2D" parent="SFX"]
-position = Vector2(1, 0)
-stream = ExtResource("3_1ekd0")
-bus = &"SFX"
-
-[node name="DoubleJumpSfx" type="AudioStreamPlayer2D" parent="SFX"]
-position = Vector2(0, 6)
-stream = ExtResource("5_bx67g")
-bus = &"SFX"
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(96, -34)
 zoom = Vector2(3, 3)
@@ -199,6 +177,28 @@ offset_right = -97.0
 offset_bottom = -132.0
 scale = Vector2(11.7182, 6.77844)
 color = Color(1, 1, 1, 0)
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="JumpSfx" type="AudioStreamPlayer2D" parent="SFX"]
+position = Vector2(0, 7)
+stream = ExtResource("2_bhdql")
+bus = &"SFX"
+
+[node name="PowerUpSfx" type="AudioStreamPlayer2D" parent="SFX"]
+position = Vector2(0, -8)
+stream = ExtResource("5_q40mt")
+bus = &"SFX"
+
+[node name="PickupCoinSfx" type="AudioStreamPlayer2D" parent="SFX"]
+position = Vector2(1, 0)
+stream = ExtResource("3_1ekd0")
+bus = &"SFX"
+
+[node name="DoubleJumpSfx" type="AudioStreamPlayer2D" parent="SFX"]
+position = Vector2(0, 6)
+stream = ExtResource("5_bx67g")
+bus = &"SFX"
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

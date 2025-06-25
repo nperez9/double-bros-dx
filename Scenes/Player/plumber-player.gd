@@ -102,7 +102,7 @@ func flip_sprite(direction: bool):
 	sprite.flip_h = direction
 
 func check_lose_condition():
-	if global_position.y > 350:
+	if global_position.y > 150:
 		game_over()
 
 func get_power_up():
