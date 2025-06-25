@@ -7,7 +7,7 @@ class_name LevelBase
 var level_color_rect = ColorRect
 var jump_effect = preload("res://Scenes/Player/jump_effect.tscn")
 
-@onready var level_audio_stream: AudioStream = AudioStream.new()
+@onready var level_audio_stream: AudioStreamPlayer = AudioStreamPlayer .new()
 
 func _init():
 	create_level_nodes()
@@ -16,9 +16,11 @@ func _ready():
 	var tween = create_tween().set_ease(Tween.EASE_OUT_IN)
 	tween.tween_property(level_color_rect, "color", Color.BLACK, 1)
 	
+	
 	## Setups the music!
 	if (levelMusic != null):
 		level_audio_stream.stream = levelMusic
+		add_child(level_audio_stream)
 		level_audio_stream.play()
 
 func create_level_nodes(): 

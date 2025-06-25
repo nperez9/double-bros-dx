@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/player/plumber-player.gd" id="1_blwad"]
 [ext_resource type="AudioStream" uid="uid://cddp74dgni42g" path="res://Audio/SFX/jump.sfxr" id="2_bhdql"]
-[ext_resource type="SpriteFrames" uid="uid://bhrcgnejaoq14" path="res://scenes/Player/plumber-player.tres" id="2_tkoci"]
+[ext_resource type="SpriteFrames" uid="uid://bhrcgnejaoq14" path="res://Scenes/Player/plumber-player.tres" id="2_tkoci"]
 [ext_resource type="AudioStream" uid="uid://dj61ivtwhvq0c" path="res://Audio/SFX/pick_coin.sfxr" id="3_1ekd0"]
 [ext_resource type="Texture2D" uid="uid://ydbe1tyhvygu" path="res://Sprites/Objects/tile_0151.png" id="4_wbuhd"]
 [ext_resource type="AudioStream" uid="uid://bbbaipv2hkl2l" path="res://Audio/SFX/double_jump.sfxr" id="5_bx67g"]
